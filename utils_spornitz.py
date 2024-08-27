@@ -1,4 +1,4 @@
-''' ITERATION 2
+''' ITERATION 3
 
 Module: Synapse Analytics - Reusable Module for My Data Analytics Projects
 
@@ -6,26 +6,61 @@ This module provides a simple, reusable foundation for my analytics projects.
 
 Process:
 
-Here's what a second draft of my utils_case.py might look like:
-
-1. I start with this docstring at the very beginning.
-   I use it to clarify the purpose of my Python file and organize my thoughts.
-   
-2. I'll declare a global variable for my byline string and just set it to some simple text.
-
-3. I'll declare a main() function for my module. When I run this script, I can use main() to test my byline.
-
-4. I'll add the boilerplate conditional execution code so I only run the main() function when 
-   this script is executed directly (but not when I import it into another file).
-
-I'll test it in an online interpreter to ensure this version runs correctly before continuing.
+In this third iteration, I declare additional variables to show skills with different data types.
 '''
 
-####################################
-# Declare a global variable named byline.
+#####################################
+# Declare global variables - keep byline at the end
+# We will use this information in a smarter byline
 #####################################
 
-byline: str = 'Synapse Analytics: Deeper Insights. Clearer Decisions.'
+# Boolean variable to indicate if the company has international clients
+has_international_clients: bool = True
+
+# Integer variable for the number of years in operation
+years_in_operation: int = 10
+
+# List of strings representing the skills offered by the company
+skills_offered: list = ["Data Analysis", "Machine Learning", "Business Intelligence"]
+
+# List of floats representing individual client satisfaction scores
+client_satisfaction_scores: list = [4.8, 4.6, 4.9, 5.0, 4.7]
+
+# Boolean variable to indicate if the company has Spanish speaking Analysts
+has_spanish_speaking_analysts = True
+
+# Boolean variable to indicate if the company has female analyts
+has_female_analysts = True
+
+# Integer variable for the number of employees
+number_employees: int = 150
+
+# List of integers representing the number of years experience of the top five analysts
+years_of_experience: list = [30, 28, 22, 18, 15]
+
+# List of cities where we serve Clients
+locations:  list = ['Tampa', 'Kansas City', 'New York']
+
+#####################################
+# Declare a global variable named byline. 
+# Make it a multiline f-string to show our information.
+#####################################
+
+byline: str = f"""
+---------------------------------------------------------
+Synapse Analytics: Deeper Insights. Clearer Decisions.
+---------------------------------------------------------
+Has International Clients:  {has_international_clients}
+Years in Operation:         {years_in_operation}
+Skills Offered:             {skills_offered}
+Client Satisfaction Scores: {client_satisfaction_scores}
+Has Spanish Speaking Analysts:    {has_spanish_speaking_analysts}
+Has Female Analysts:    {has_female_analysts}
+Number of Employees:    {number_employees}
+Locations Served:    {locations}
+Years of Experience of our top five analysts:    {years_of_experience}
+
+"""
 
 #####################################
 # Define the get_byline() Function
@@ -39,9 +74,8 @@ def get_byline() -> str:
 # Define a main() function for this module.
 #####################################
 
-# The main function now calls get_byline() to retrieve the byline.
 def main() -> None:
-    '''Print the byline to the console when this function is called.'''
+    '''Print results of get_byline() when main() is called.'''
     print(get_byline())
 
 #####################################
